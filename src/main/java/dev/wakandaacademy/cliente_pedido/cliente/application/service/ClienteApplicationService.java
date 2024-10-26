@@ -1,7 +1,10 @@
 package dev.wakandaacademy.cliente_pedido.cliente.application.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
+import dev.wakandaacademy.cliente_pedido.cliente.application.api.ClienteListResponse;
 import dev.wakandaacademy.cliente_pedido.cliente.application.api.ClienteRequest;
 import dev.wakandaacademy.cliente_pedido.cliente.application.api.ClienteResponse;
 import dev.wakandaacademy.cliente_pedido.cliente.application.repository.ClienteRepository;
@@ -22,6 +25,13 @@ public class ClienteApplicationService implements ClienteService {
 		log.info("[finish] ClienteApplicationService - criaCliente");
 		return ClienteResponse.builder()
 				.idCliente(cliente.getIdCliente()).build();
+	}
+
+	@Override
+	public List<ClienteListResponse> buscaTodosClientes() {
+		log.info("[start] ClienteApplicationService - buscaTodosClientes");
+		log.info("[finish] ClienteApplicationService - buscaTodosClientes");
+		return null;
 	}
 
 }

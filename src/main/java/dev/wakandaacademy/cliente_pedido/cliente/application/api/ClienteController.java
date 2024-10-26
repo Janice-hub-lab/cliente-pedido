@@ -18,15 +18,16 @@ public class ClienteController implements ClienteAPI {
 	public ClienteResponse postCliente(ClienteRequest clienteRequest) {
 		log.info("[start] ClienteController  - postCliente");
 		ClienteResponse clienteCriado = clienteService.criaCliente(clienteRequest);
-	    log.info("[finish] ClienteController  - postCliente");
+		log.info("[finish] ClienteController  - postCliente");
 		return clienteCriado;
 	}
 
 	@Override
 	public List<ClienteListResponse> getTodosClientes() {
 		log.info("[start] ClienteController  - getTodosClientes");
+		List<ClienteListResponse> clientes = clienteService.buscaTodosClientes();
 		log.info("[finish] ClienteController  - getTodosClientes");
-		return null;
+		return clientes;
 	}
 
 }

@@ -48,8 +48,7 @@ public class Cliente {
 		this.cpf = cpf;
 		this.email = email;
 		this.dataHoraDoCadastro = LocalDateTime.now();
-	}
-	
+	}	
     
 }
 

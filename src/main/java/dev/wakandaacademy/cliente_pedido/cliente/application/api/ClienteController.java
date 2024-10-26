@@ -1,6 +1,7 @@
 package dev.wakandaacademy.cliente_pedido.cliente.application.api;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,5 +30,15 @@ public class ClienteController implements ClienteAPI {
 		log.info("[finish] ClienteController  - getTodosClientes");
 		return clientes;
 	}
+
+	@Override
+	public ClienteDetalhadoResponse getClienteAtravesId(UUID idCliente) {
+		log.info("[start] ClienteController  - getClienteAtravesId");
+		log.info("[idCliente] {}", idCliente);
+		log.info("[finish] ClienteController  - getClienteAtravesId");
+		return null;
+	}
+
+
 
 }

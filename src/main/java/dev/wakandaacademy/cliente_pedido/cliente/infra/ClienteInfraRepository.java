@@ -21,5 +21,4 @@ public class ClienteInfraRepository implements ClienteRepository {
 		log.info("[finish] ClienteInfraRepository - salva");
 		return cliente;
 	}
-
 }

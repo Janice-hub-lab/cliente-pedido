@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.hibernate.validator.constraints.br.CPF;
 
+import dev.wakandaacademy.cliente_pedido.cliente.application.api.ClienteAlteracaoRequest;
 import dev.wakandaacademy.cliente_pedido.cliente.application.api.ClienteRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -50,6 +51,14 @@ public class Cliente {
 		this.cpf = clienteRequest.getCpf();
 		this.email = clienteRequest.getEmail();
 		this.dataHoraDoCadastro = LocalDateTime.now();
+	}
+
+	public void altera(ClienteAlteracaoRequest clienteRequest) {
+		this.nomeCompleto = clienteRequest.getNomeCompleto();
+		this.endereco = clienteRequest.getEndereco();
+		this.celular = clienteRequest.getCelular();
+		this.getDataHoraDaUltimaAlteracao = LocalDateTime.now();
+		
 	}	
     
 }

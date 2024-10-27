@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import dev.wakandaacademy.cliente_pedido.cliente.application.api.ClienteAlteracaoRequest;
 import dev.wakandaacademy.cliente_pedido.cliente.application.api.ClienteDetalhadoResponse;
 import dev.wakandaacademy.cliente_pedido.cliente.application.api.ClienteListResponse;
 import dev.wakandaacademy.cliente_pedido.cliente.application.api.ClienteRequest;
@@ -53,4 +54,13 @@ public class ClienteApplicationService implements ClienteService {
 
 	}
 
+	@Override
+	public void patchAlteraCliente(UUID idCliente, ClienteAlteracaoRequest clienteAlteracaoRequest) {
+		log.info("[start] ClienteApplicationService - patchAlteraCliente");
+		Cliente cliente = clienteRepository.buscaClienteAtravesId(idCliente);
+		cliente.altera(clienteAlteracaoRequest);
+		clienteRepository.salva(cliente);
+		log.info("[finish] ClienteApplicationService - patchAlteraCliente");
+
+	}
 }

@@ -1,0 +1,38 @@
+package dev.wakandaacademy.cliente_pedido.pedido.domain;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@Getter
+@Entity
+public class Pedido {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(columnDefinition = "uuid", name = "idPedido", updatable = false, unique = true, nullable = false)
+	private UUID idPedido;
+	@NotNull
+	@Column(columnDefinition = "uuid", name = "idCliente", nullable = false)
+	private UUID idCliente;
+	@NotBlank
+	private String quantidade;
+	@NotBlank
+	private String descricao;
+	@NotBlank
+	private String metodoPagamento;
+
+	
+	private LocalDateTime dataHoraDoCadastro;
+	private LocalDateTime getDataHoraDaUltimaAlteracao;
+
+}

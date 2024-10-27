@@ -25,8 +25,7 @@ public class ClienteApplicationService implements ClienteService {
 		log.info("[start] ClienteApplicationService - criaCliente");
 		Cliente cliente = clienteRepository.salva(new Cliente(clienteRequest));
 		log.info("[finish] ClienteApplicationService - criaCliente");
-		return ClienteResponse.builder()
-				.idCliente(cliente.getIdCliente()).build();
+		return ClienteResponse.builder().idCliente(cliente.getIdCliente()).build();
 	}
 
 	@Override
@@ -41,8 +40,17 @@ public class ClienteApplicationService implements ClienteService {
 	public ClienteDetalhadoResponse buscaClienteAtravesId(UUID idCliente) {
 		log.info("[start] ClienteApplicationService - buscaClienteAtravesId");
 		Cliente cliente = clienteRepository.buscaClienteAtravesId(idCliente);
-		log.info("[finish] ClienteApplicationService - buscaClienteAtravesId");		
+		log.info("[finish] ClienteApplicationService - buscaClienteAtravesId");
 		return new ClienteDetalhadoResponse(cliente);
+	}
+
+	@Override
+	public void deletaClienteAtravesId(UUID idCliente) {
+		log.info("[start] ClienteApplicationService - deletaClienteAtravesId");
+		Cliente cliente = clienteRepository.buscaClienteAtravesId(idCliente);
+		//clienteRepository.deletaCliente(cliente);
+		log.info("[finish] ClienteApplicationService - deletaClienteAtravesId");
+
 	}
 
 }

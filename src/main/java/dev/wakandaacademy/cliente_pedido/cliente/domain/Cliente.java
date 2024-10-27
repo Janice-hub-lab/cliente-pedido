@@ -33,9 +33,11 @@ public class Cliente {
     private String celular;
     @NotBlank
     @CPF
+    @Column(unique = true)
     private String cpf;
     @NotBlank
     @Email
+    @Column(unique = true)
     private String email;
 
     private LocalDateTime dataHoraDoCadastro;

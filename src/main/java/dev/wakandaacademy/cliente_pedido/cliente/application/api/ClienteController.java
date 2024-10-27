@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.web.bind.annotation.RestController;
 
 import dev.wakandaacademy.cliente_pedido.cliente.application.service.ClienteService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -48,5 +49,15 @@ public class ClienteController implements ClienteAPI {
 		log.info("[start] ClienteController  - deletaClienteAtravesId");
 		
 	}
+
+	 @Override
+	    public void patchAlteraCliente(UUID idCliente, @Valid ClienteAlteracaoRequest clienteAlteracaoRequest) {
+	        log.info("[start] ClienteController  - patchAlteraCliente ");
+	        log.info("[idCliente] {} ", idCliente);
+	        //clienteService.patchAlteraCliente(idCliente, clienteAlteracaoRequest);
+	        log.info("[finish] ClienteController  - patchAlteraCliente ");
+	    }
+
+	
 
 }

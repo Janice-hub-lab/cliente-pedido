@@ -3,8 +3,10 @@ package dev.wakandaacademy.cliente_pedido.pedido.infra;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
+import dev.wakandaacademy.cliente_pedido.handler.APIException;
 import dev.wakandaacademy.cliente_pedido.pedido.application.service.PedidoRepository;
 import dev.wakandaacademy.cliente_pedido.pedido.domain.Pedido;
 import lombok.RequiredArgsConstructor;
@@ -30,6 +32,16 @@ public class PedidoInfraRepository implements PedidoRepository {
 		var pedidos = pedidoSpringDataJPARepository.findByIdCliente(idCliente);
 		log.info("[finish] PedidoInfraRepository - buscaPedidosDoClienteComId");
 		return pedidos;
+	}
+
+	@Override
+	public Pedido buscaPedidoPeloId(UUID idPedido) {
+		log.info("[start] PedidoInfraRepository - buscaPedidoPeloId");
+		var pedido = pedidoSpringDataJPARepository.findById(idPedido)
+				.orElseThrow(( ) -> APIException.build
+						(HttpStatus.NOT_FOUND, "Pedido não encontrado para o idPedido =" + idPedido));	
+		log.info("[finish] PedidoInfraRepository - buscaPedidoPeloId");
+		return pedido;
 	}
 
 }

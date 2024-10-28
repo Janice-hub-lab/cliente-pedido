@@ -9,5 +9,6 @@ import dev.wakandaacademy.cliente_pedido.pedido.domain.Pedido;
 public interface PedidoRepository {
 	Pedido salvaPedido(Pedido pedido);
 	List<Pedido> buscaPedidosDoClienteComId(UUID idCliente);
+	Pedido buscaPedidoPeloId(UUID idPedido);
 
 }

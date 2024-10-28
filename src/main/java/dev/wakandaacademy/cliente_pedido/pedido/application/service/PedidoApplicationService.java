@@ -1,10 +1,12 @@
 package dev.wakandaacademy.cliente_pedido.pedido.application.service;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
 import dev.wakandaacademy.cliente_pedido.cliente.application.service.ClienteService;
+import dev.wakandaacademy.cliente_pedido.pedido.application.api.PedidoClienteListResponse;
 import dev.wakandaacademy.cliente_pedido.pedido.application.api.PedidoRequest;
 import dev.wakandaacademy.cliente_pedido.pedido.application.api.PedidoResponse;
 import dev.wakandaacademy.cliente_pedido.pedido.domain.Pedido;
@@ -26,6 +28,14 @@ public class PedidoApplicationService implements PedidoService {
 		Pedido pedido = pedidoRepository.salvaPedido(new Pedido(idCliente, pedidoRequest));
 		log.info("[finish] PedidoApplicationService - criaPedido");
 		return new PedidoResponse(pedido.getIdPedido());
+	}
+
+	@Override
+	public List<PedidoClienteListResponse> buscaPedidosDoClienteComId(UUID idCliente) {
+		log.info("[start] PedidoApplicationService - buscaPedidosDoClienteComId");
+		clienteService.buscaClienteAtravesId(idCliente);
+		log.info("[finish] PedidoApplicationService - buscaPedidosDoClienteComId");
+		return null;
 	}
 
 }

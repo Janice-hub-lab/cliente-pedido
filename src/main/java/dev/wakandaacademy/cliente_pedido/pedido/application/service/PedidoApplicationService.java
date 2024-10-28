@@ -49,4 +49,11 @@ public class PedidoApplicationService implements PedidoService {
 		return new PedidoClienteDetalhadoResponse(pedido);
 	}
 
+	@Override
+	public void deletaPedidoDoClienteComId(UUID idCliente, UUID idPedido) {
+		log.info("[start] PedidoApplicationService - deletaPedidoDoClienteComId");
+		log.info("[finish] PedidoApplicationService - deletaPedidoDoClienteComId");
+		
+	}
+
 }

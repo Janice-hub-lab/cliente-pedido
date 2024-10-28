@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,5 +34,10 @@ public interface PedidoAPI {
 	@DeleteMapping(value = "/{idPedido}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	void deletePedidoDoClienteComId(@PathVariable UUID idCliente, @PathVariable UUID idPedido);
+	
+	@PatchMapping(value = "/{idPedido}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    PedidoResponse  patchPedido(@PathVariable UUID idCliente, @PathVariable UUID idPedido,
+                              @Valid @RequestBody PedidoAlteracaoRequest pedidoAlteracaoRequest);
 
 }

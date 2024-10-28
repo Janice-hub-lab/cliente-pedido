@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import dev.wakandaacademy.cliente_pedido.cliente.application.service.ClienteService;
+import dev.wakandaacademy.cliente_pedido.pedido.application.api.PedidoClienteDetalhadoResponse;
 import dev.wakandaacademy.cliente_pedido.pedido.application.api.PedidoClienteListResponse;
 import dev.wakandaacademy.cliente_pedido.pedido.application.api.PedidoRequest;
 import dev.wakandaacademy.cliente_pedido.pedido.application.api.PedidoResponse;
@@ -37,6 +38,13 @@ public class PedidoApplicationService implements PedidoService {
 		List<Pedido> pedidosDoCliente = pedidoRepository.buscaPedidosDoClienteComId(idCliente);
 		log.info("[finish] PedidoApplicationService - buscaPedidosDoClienteComId");
 		return PedidoClienteListResponse.converte(pedidosDoCliente);
+	}
+
+	@Override
+	public PedidoClienteDetalhadoResponse buscaPedidoDoClienteComID(UUID idCliente, UUID idPedido) {
+		log.info("[start] PedidoApplicationService - buscaPedidoDoClienteComID");
+		log.info("[finish] PedidoApplicationService - buscaPedidoDoClienteComID");
+		return null;
 	}
 
 }

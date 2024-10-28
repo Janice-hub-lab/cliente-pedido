@@ -3,6 +3,7 @@ package dev.wakandaacademy.cliente_pedido.pedido.domain;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import dev.wakandaacademy.cliente_pedido.pedido.application.api.PedidoAlteracaoRequest;
 import dev.wakandaacademy.cliente_pedido.pedido.application.api.PedidoRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -42,6 +43,13 @@ public class Pedido {
 		this.descricao = pedidoRequest.getDescricao();
 		this.metodoPagamento = pedidoRequest.getMetodoPagamento();
 		this.dataHoraDoCadastro = LocalDateTime.now();
+	}
+
+	public void altera(PedidoAlteracaoRequest pedidoRequest) {
+		this.quantidade = pedidoRequest.getQuantidade();
+		this.descricao = pedidoRequest.getDescricao();
+		this.metodoPagamento = pedidoRequest.getMetodoPagamento();
+		this.dataHoraDoCadastro = LocalDateTime.now();	
 	}
 
 

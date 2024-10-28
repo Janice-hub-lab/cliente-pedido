@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import dev.wakandaacademy.cliente_pedido.cliente.application.service.ClienteService;
+import dev.wakandaacademy.cliente_pedido.pedido.application.api.PedidoAlteracaoRequest;
 import dev.wakandaacademy.cliente_pedido.pedido.application.api.PedidoClienteDetalhadoResponse;
 import dev.wakandaacademy.cliente_pedido.pedido.application.api.PedidoClienteListResponse;
 import dev.wakandaacademy.cliente_pedido.pedido.application.api.PedidoRequest;
@@ -56,6 +57,19 @@ public class PedidoApplicationService implements PedidoService {
 		Pedido pedido = pedidoRepository.buscaPedidoPeloId(idPedido);
 		pedidoRepository.deletaPedido(pedido);
 		log.info("[finish] PedidoApplicationService - deletaPedidoDoClienteComId");
+		
+	}
+
+	@Override
+	public void alteraPedidoDoClienteComId(UUID idCliente, UUID idPedido,
+			PedidoAlteracaoRequest pedidoAlteracaoRequest) {
+		log.info("[start] PedidoApplicationService - alteraPedidoDoClienteComId");
+		clienteService.buscaClienteAtravesId(idCliente);
+		Pedido pedido = pedidoRepository.buscaPedidoPeloId(idPedido);
+		pedido.altera(pedidoAlteracaoRequest);
+		pedidoRepository.salvaPedido(pedido);
+		log.info("[finish] PedidoApplicationService - alteraPedidoDoClienteComId");
+
 		
 	}
 

@@ -46,7 +46,7 @@ public class PedidoApplicationService implements PedidoService {
 		clienteService.buscaClienteAtravesId(idCliente);
 		Pedido pedido = pedidoRepository.buscaPedidoPeloId(idPedido);
 		log.info("[finish] PedidoApplicationService - buscaPedidoDoClienteComID");
-		return null;
+		return new PedidoClienteDetalhadoResponse(pedido);
 	}
 
 }

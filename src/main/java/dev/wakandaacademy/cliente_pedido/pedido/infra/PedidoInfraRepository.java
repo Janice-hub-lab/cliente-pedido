@@ -44,4 +44,11 @@ public class PedidoInfraRepository implements PedidoRepository {
 		return pedido;
 	}
 
+	@Override
+	public void deletaPedido(Pedido pedido) {
+		log.info("[start] PedidoInfraRepository - deletaPedido");
+		pedidoSpringDataJPARepository.delete(pedido);
+		log.info("[finsh] PedidoInfraRepository - deletaPedido");		
+	}
+
 }

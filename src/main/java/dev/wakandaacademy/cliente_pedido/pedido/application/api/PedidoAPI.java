@@ -32,6 +32,6 @@ public interface PedidoAPI {
 
 	@DeleteMapping(value = "/{idPedido}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	void deletePedidDoClienteComId(@PathVariable UUID idCliente, @PathVariable UUID idPedido);
+	void deletePedidoDoClienteComId(@PathVariable UUID idCliente, @PathVariable UUID idPedido);
 
 }

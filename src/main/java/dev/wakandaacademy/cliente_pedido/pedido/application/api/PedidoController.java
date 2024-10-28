@@ -45,11 +45,11 @@ public class PedidoController implements PedidoAPI {
 	}
 
 	@Override
-	public void deletePedidDoClienteComId(UUID idCliente, UUID idPedido) {
-		log.info("[start] PedidoController - deletePedidDoClienteComId");
+	public void deletePedidoDoClienteComId(UUID idCliente, UUID idPedido) {
+		log.info("[start] PedidoController - deletePedidoDoClienteComId");
 		log.info("[idCliente] {}", idCliente, idPedido);
 		pedidoService.deletaPedidoDoClienteComId(idCliente, idPedido);
-		log.info("[finaliza] PedidoController - deletePedidDoClienteComId");
+		log.info("[finaliza] PedidoController - deletePedidoDoClienteComId");
 
 	}
 

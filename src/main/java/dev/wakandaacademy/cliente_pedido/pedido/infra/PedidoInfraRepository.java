@@ -1,5 +1,8 @@
 package dev.wakandaacademy.cliente_pedido.pedido.infra;
 
+import java.util.List;
+import java.util.UUID;
+
 import org.springframework.stereotype.Repository;
 
 import dev.wakandaacademy.cliente_pedido.pedido.application.service.PedidoRepository;
@@ -19,6 +22,13 @@ public class PedidoInfraRepository implements PedidoRepository {
 		pedidoSpringDataJPARepository.save(pedido);
 		log.info("[finish] PedidoInfraRepository - salvaPedido");
 		return pedido;
+	}
+
+	@Override
+	public List<Pedido> buscaPedidosDoClienteComId(UUID idCliente) {
+		log.info("[start] PedidoInfraRepository - buscaPedidosDoClienteComId");
+		log.info("[finish] PedidoInfraRepository - buscaPedidosDoClienteComId");
+		return null;
 	}
 
 }

@@ -37,7 +37,7 @@ public interface PedidoAPI {
 	
 	@PatchMapping(value = "/{idPedido}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
-    PedidoResponse  patchPedido(@PathVariable UUID idCliente, @PathVariable UUID idPedido,
+    void  patchPedido(@PathVariable UUID idCliente, @PathVariable UUID idPedido,
                               @Valid @RequestBody PedidoAlteracaoRequest pedidoAlteracaoRequest);
 
 }

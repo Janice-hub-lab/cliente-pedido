@@ -33,9 +33,10 @@ public class EntregaApplicationService implements EntregaService {
 	@Override
 	public List<EntregaPedidoListResponse> buscaEntregasDoPedidoComID(UUID idPedido) {
 		log.info("[start] EntregaApplicationService - buscaEntregasDoPedidoComID");
-		pedidoService.buscaEntregaAtravesId(idPedido);		
+		pedidoService.buscaEntregaAtravesId(idPedido);
+		List<Entrega> entregasDoPedido = entregaRepository.buscaEntregasDoPedidoComID(idPedido);
 		log.info("[finish] EntregaApplicationService - buscaEntregasDoPedidoComID");
-		return null;
+		return EntregaPedidoListResponse.converte(entregasDoPedido);
 	}
 
 }

@@ -1,5 +1,8 @@
 package dev.wakandaacademy.cliente_pedido.entrega.infra;
 
+import java.util.List;
+import java.util.UUID;
+
 import org.springframework.stereotype.Repository;
 
 import dev.wakandaacademy.cliente_pedido.entrega.application.service.EntregaRepository;
@@ -19,6 +22,13 @@ public class EntregaInfraRepository implements EntregaRepository {
 		entregaSpringDataJPARepository.save(entrega);
 		log.info("[finish] EntregaInfraRepository - salvaEntrega");
 		return entrega;
+	}
+
+	@Override
+	public List<Entrega> buscaEntregasDoPedidoComID(UUID idPedido) {
+		log.info("[start] EntregaInfraRepository - buscaEntregasDoPedidoComID");
+		log.info("[start] EntregaInfraRepository - buscaEntregasDoPedidoComID");
+		return null;
 	}
 
 }

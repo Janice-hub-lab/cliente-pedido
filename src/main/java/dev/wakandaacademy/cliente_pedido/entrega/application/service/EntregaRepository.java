@@ -8,5 +8,6 @@ import dev.wakandaacademy.cliente_pedido.entrega.domain.Entrega;
 public interface EntregaRepository {
 	Entrega salvaEntrega(Entrega entrega);
 	List<Entrega> buscaEntregasDoPedidoComID(UUID idPedido);
+	Entrega buscaEntregaPeloId(UUID idEntrega);
 
 }

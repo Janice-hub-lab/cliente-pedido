@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import dev.wakandaacademy.cliente_pedido.entrega.application.api.EntregaPedidoDetalhadoResponse;
 import dev.wakandaacademy.cliente_pedido.entrega.application.api.EntregaPedidoListResponse;
 import dev.wakandaacademy.cliente_pedido.entrega.application.api.EntregaRequest;
 import dev.wakandaacademy.cliente_pedido.entrega.application.api.EntregaResponse;
@@ -37,6 +38,13 @@ public class EntregaApplicationService implements EntregaService {
 		List<Entrega> entregasDoPedido = entregaRepository.buscaEntregasDoPedidoComID(idPedido);
 		log.info("[finish] EntregaApplicationService - buscaEntregasDoPedidoComID");
 		return EntregaPedidoListResponse.converte(entregasDoPedido);
+	}
+
+	@Override
+	public EntregaPedidoDetalhadoResponse buscaEntregasDoPedidoComID(UUID idPedido, UUID idEntrega) {
+		log.info("[start] EntregaApplicationService - buscaEntregasDoPedidoComID");
+		log.info("[finish] EntregaApplicationService - buscaEntregasDoPedidoComID");
+		return null;
 	}
 
 }

@@ -35,4 +35,12 @@ public class EntregaController implements EntregaAPI {
 		return entregasDoPedido;
 	}
 
+	@Override
+	public EntregaPedidoDetalhadoResponse getEntregaDoPedidoComId(UUID idPedido, UUID idEntrega) {
+		log.info("[start] EntregaController - getEntregaDoPedidoComId");
+		log.info("[idPedido] - [idEntrega] {}", idPedido, idEntrega);
+		log.info("[finish] EntregaController - getEntregaDoPedidoComId");
+		return null;
+	}
+
 }

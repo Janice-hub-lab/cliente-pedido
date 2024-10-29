@@ -49,4 +49,11 @@ public class EntregaApplicationService implements EntregaService {
 		return new EntregaPedidoDetalhadoResponse(entrega);
 	}
 
+	@Override
+	public void deletaEntregaDoPedidoComId(UUID idPedido, UUID idEntrega) {
+		log.info("[start] EntregaApplicationService - deletaEntregaDoPedidoComId");
+		log.info("[finish] EntregaApplicationService - deletaEntregaDoPedidoComId");
+
+	}
+
 }

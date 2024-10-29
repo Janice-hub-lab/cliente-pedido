@@ -13,5 +13,6 @@ public interface EntregaService {
 	EntregaResponse criaEntrega(UUID idPedido, @Valid EntregaRequest entregaRequest);
 	List<EntregaPedidoListResponse> buscaEntregasDoPedidoComID(UUID idPedido);
 	EntregaPedidoDetalhadoResponse buscaEntregasDoPedidoComID(UUID idPedido, UUID idEntrega);
+	void deletaEntregaDoPedidoComId(UUID idPedido, UUID idEntrega);
 
 }

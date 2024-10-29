@@ -57,7 +57,7 @@ public class PedidoApplicationService implements PedidoService {
 		Pedido pedido = pedidoRepository.buscaPedidoPeloId(idPedido);
 		pedidoRepository.deletaPedido(pedido);
 		log.info("[finish] PedidoApplicationService - deletaPedidoDoClienteComId");
-		
+
 	}
 
 	@Override
@@ -70,6 +70,11 @@ public class PedidoApplicationService implements PedidoService {
 		pedidoRepository.salvaPedido(pedido);
 		log.info("[finish] PedidoApplicationService - alteraPedidoDoClienteComId");
 
+	}
+
+	@Override
+	public void buscaEntregaAtravesId(UUID idPedido) {
+		// TODO Auto-generated method stub
 		
 	}
 

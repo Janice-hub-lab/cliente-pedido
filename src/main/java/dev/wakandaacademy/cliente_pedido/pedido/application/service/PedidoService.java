@@ -16,6 +16,9 @@ public interface PedidoService {
 	PedidoClienteDetalhadoResponse buscaPedidoDoClienteComID(UUID idCliente, UUID idPedido);
 	void deletaPedidoDoClienteComId(UUID idCliente, UUID idPedido);
 	void alteraPedidoDoClienteComId(UUID idCliente, UUID idPedido,
-			 PedidoAlteracaoRequest pedidoAlteracaoRequest);
+	PedidoAlteracaoRequest pedidoAlteracaoRequest);
+	void buscaEntregaAtravesId(UUID idPedido);
+	
+	
 	
 }

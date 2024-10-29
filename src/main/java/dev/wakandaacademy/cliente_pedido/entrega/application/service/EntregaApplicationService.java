@@ -1,9 +1,11 @@
 package dev.wakandaacademy.cliente_pedido.entrega.application.service;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import dev.wakandaacademy.cliente_pedido.entrega.application.api.EntregaPedidoListResponse;
 import dev.wakandaacademy.cliente_pedido.entrega.application.api.EntregaRequest;
 import dev.wakandaacademy.cliente_pedido.entrega.application.api.EntregaResponse;
 import dev.wakandaacademy.cliente_pedido.entrega.domain.Entrega;
@@ -26,6 +28,14 @@ public class EntregaApplicationService implements EntregaService {
 		Entrega entrega = entregaRepository.salvaEntrega(new Entrega(idPedido, entregaRequest));
 		log.info("[finsh] EntregaApplicationService - criaEntrega");
 		return new EntregaResponse(entrega.getIdEntrega());
+	}
+
+	@Override
+	public List<EntregaPedidoListResponse> buscaEntregasDoPedidoComID(UUID idPedido) {
+		log.info("[start] EntregaApplicationService - buscaEntregasDoPedidoComID");
+		pedidoService.buscaEntregaAtravesId(idPedido);		
+		log.info("[finish] EntregaApplicationService - buscaEntregasDoPedidoComID");
+		return null;
 	}
 
 }

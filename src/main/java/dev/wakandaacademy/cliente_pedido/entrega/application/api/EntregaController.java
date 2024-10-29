@@ -30,8 +30,9 @@ public class EntregaController implements EntregaAPI {
 	public List<EntregaPedidoListResponse> getEntregaDoPedidoComId(UUID idPedido) {
 		log.info("[start] EntregaController - getEntregaDoPedidoComId");
 		log.info("[idPedido] {}", idPedido);
+		List<EntregaPedidoListResponse> entregasDoPedido = entregaService.buscaEntregasDoPedidoComID(idPedido);
 		log.info("[finish] EntregaController - getEntregaDoPedidoComId");
-		return null;
+		return entregasDoPedido;
 	}
 
 }

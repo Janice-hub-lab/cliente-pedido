@@ -23,7 +23,7 @@ public interface EntregaAPI {
 	EntregaResponse postEntrega(@PathVariable UUID idPedido, @Valid @RequestBody EntregaRequest entregaRequest);
 
 	@GetMapping
-	@ResponseStatus(code = HttpStatus.OK)
+	@ResponseStatus(code = HttpStatus.NOT_FOUND)
 	List<EntregaPedidoListResponse> getEntregaDoPedidoComId(@PathVariable UUID idPedido);
 
 }

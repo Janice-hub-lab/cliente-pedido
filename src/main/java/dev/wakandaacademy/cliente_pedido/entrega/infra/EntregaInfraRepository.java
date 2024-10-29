@@ -43,4 +43,12 @@ public class EntregaInfraRepository implements EntregaRepository {
 		return entrega;
 	}
 
+	@Override
+	public void deletaEntrega(Entrega entrega) {
+		log.info("[start] EntregaInfraRepository - deletaEntrega");
+		entregaSpringDataJPARepository.delete(entrega);
+		log.info("[finish] EntregaInfraRepository - deletaEntrega");
+		
+	}
+
 }

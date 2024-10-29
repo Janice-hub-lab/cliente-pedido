@@ -52,6 +52,9 @@ public class EntregaApplicationService implements EntregaService {
 	@Override
 	public void deletaEntregaDoPedidoComId(UUID idPedido, UUID idEntrega) {
 		log.info("[start] EntregaApplicationService - deletaEntregaDoPedidoComId");
+		pedidoService.buscaEntregaAtravesId(idPedido);
+		Entrega entrega = entregaRepository.buscaEntregaPeloId(idEntrega);
+		entregaRepository.deletaEntrega(entrega);
 		log.info("[finish] EntregaApplicationService - deletaEntregaDoPedidoComId");
 
 	}

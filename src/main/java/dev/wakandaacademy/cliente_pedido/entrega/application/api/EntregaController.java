@@ -1,5 +1,6 @@
 package dev.wakandaacademy.cliente_pedido.entrega.application.api;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +23,15 @@ public class EntregaController implements EntregaAPI {
 		log.info("[idPedido] {}", idPedido);
 		EntregaResponse entrega = entregaService.criaEntrega(idPedido, entregaRequest);
 		log.info("[finish] EntregaController - postEntrega");
-		return entrega;
+		return entrega; 
+	}
+
+	@Override
+	public List<EntregaPedidoListResponse> getEntregaDoPedidoComId(UUID idPedido) {
+		log.info("[start] EntregaController - getEntregaDoPedidoComId");
+		log.info("[idPedido] {}", idPedido);
+		log.info("[finish] EntregaController - getEntregaDoPedidoComId");
+		return null;
 	}
 
 }

@@ -14,7 +14,7 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @RequiredArgsConstructor
 public class EntregaController implements EntregaAPI {
-	
+
 	private final EntregaService entregaService;
 
 	@Override
@@ -23,7 +23,7 @@ public class EntregaController implements EntregaAPI {
 		log.info("[idPedido] {}", idPedido);
 		EntregaResponse entrega = entregaService.criaEntrega(idPedido, entregaRequest);
 		log.info("[finish] EntregaController - postEntrega");
-		return entrega; 
+		return entrega;
 	}
 
 	@Override
@@ -50,7 +50,12 @@ public class EntregaController implements EntregaAPI {
 		log.info("[idPedido] - [idEntrega] {}", idPedido, idEntrega);
 		entregaService.deletaEntregaDoPedidoComId(idPedido, idEntrega);
 		log.info("[finish] EntregaController - deletaEntregaDoPedidoComId");
-		
 	}
 
+	@Override
+	public void patchEntrega(UUID idPedido, UUID idEntrega, @Valid EntregaAlterecaoRequest entregaAlteracaoRequest) {
+		log.info("[start] EntregaController - patchEntrega");
+		log.info("[idPedido] - [idEntrega] {}", idPedido, idEntrega);
+		log.info("[finish] EntregaController - patchEntrega");
+	}
 }

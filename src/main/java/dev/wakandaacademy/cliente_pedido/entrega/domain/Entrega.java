@@ -3,6 +3,7 @@ package dev.wakandaacademy.cliente_pedido.entrega.domain;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import dev.wakandaacademy.cliente_pedido.entrega.application.api.EntregaAlterecaoRequest;
 import dev.wakandaacademy.cliente_pedido.entrega.application.api.EntregaRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -44,5 +45,13 @@ public class Entrega {
 		this.enderecoEntrega = entregaRequest.getEnderecoEntrega();
 		this.numeroCasa = entregaRequest.getNumeroCasa();
 		this.dataHoraDoCadastro = LocalDateTime.now();
+	}
+
+	public void altera(@Valid EntregaAlterecaoRequest entregaRequest) {
+		this.pontoReferencia = entregaRequest.getPontoReferencia();
+		this.enderecoEntrega = entregaRequest.getEnderecoEntrega();
+		this.numeroCasa = entregaRequest.getNumeroCasa();
+		this.getDataHoraDaUltimaAlteracao = LocalDateTime.now();
+		
 	}
 }
